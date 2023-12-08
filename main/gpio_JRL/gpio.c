@@ -13,7 +13,8 @@ void gpio_pinMode(uint8_t pin, uint8_t mode){
         // Acceder al registro GPIO_ENABLE_W1TS_REG para configurar el pin como salida  
    // volatile uint32_t * const GPIO_EN = (volatile uint32_t * const)GPIO_EN_ADDR;
     //volatile uint32_t * const DownUp_REG = (volatile uint32_t * const)0X3FF49074;
-   
+  
+
     if(mode == 1 && pin <= 34){  //si el registro esta en 1 será salida y menor que 34 ya que 34-39 solo son entradas
         if (pin <= 31)
             GPIO_EN_ADDR |= pin_mask;

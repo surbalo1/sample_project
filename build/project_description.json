@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "main",
-    "project_version":    "1",
+    "project_version":    "90c3d36-dirty",
     "project_path":       "C:/Users/PROPIETARIO/OneDrive/Documentos/vsws/sample_project",
     "idf_path":           "C:/Users/PROPIETARIO/esp/esp-idf",
     "build_dir":          "C:/Users/PROPIETARIO/OneDrive/Documentos/vsws/sample_project/build",

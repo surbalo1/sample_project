@@ -4,9 +4,19 @@
     "freertos.h": "c",
     "gpio.h": "c",
     "task.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "i2c.h": "c",
+    "adc.h": "c",
+    "temperature_sensor.h": "c",
+    "temperature_sensor_types.h": "c",
+    "freertosconfig.h": "c",
+    "portmacro.h": "c",
+    "gpioconfig.h": "c"
   },
   "idf.portWin": "COM6",
   "idf.flashType": "UART",
-  "idf.adapterTargetName": "esp32"
+  "idf.adapterTargetName": "esp32",
+  "idf.openOcdConfigs": [
+    "board/esp32-wrover-kit-3.3v.cfg"
+  ]
 }

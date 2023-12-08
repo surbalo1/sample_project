@@ -3,12 +3,8 @@
 
 
 #include "gpio_JRL/gpioConfig.h"
-#include <stdio.h>
-#include "freertos/FreeRTOS.h"  //para la funcion del retardo
-#include "freertos/task.h"
-#include "freertos/portmacro.h"
-#include "freertos/FreeRTOSConfig.h"
 
+#include <stdio.h>
 /***********************DECLARACIONES PARA ACCESO A MEMORIA***********************/
 #define HWREG(x) (*((volatile uint32_t *)(x)))
 
@@ -21,10 +17,17 @@
 #define GPIO_EN_ADDR            HWREG(GPIO_BASE_ADDR + 0X20)  //0-31
 #define GPIO_EN1_ADDR           HWREG(GPIO_BASE_ADDR + 0X2C)  //32-39
 #define GPIO_OUT_REG            HWREG(GPIO_BASE_ADDR + 0X04)
+#define GPIO_OUT_WS_REG         HWREG(GPIO_BASE_ADDR + 0X08)
+#define GPIO_OUT_WC_REG         HWREG(GPIO_BASE_ADDR + 0X0C)
 #define GPIO_OUT1_REG           HWREG(GPIO_BASE_ADDR + 0X10)
+#define GPIO_OUT1_WS_REG        HWREG(GPIO_BASE_ADDR + 0X14)
+#define GPIO_OUT1_WC_REG        HWREG(GPIO_BASE_ADDR + 0X18)
 #define GPIO_FUN_OUT_SEL(J)     HWREG(GPIO_BASE_ADDR+(0x530 + (0x4*J)))  //selector del mux gpio
 #define GPIO_IN_ADDR            HWREG(GPIO_BASE_ADDR + 0x3C)  // Dirección de GPIO_IN_REG
 #define GPIO_IN1_ADDR           HWREG(GPIO_BASE_ADDR + 0x40)  // Dirección de GPIO_IN1_REG
+
+//OFSETS PARA DIRECCIONES GPIO
+
 //OFFSETS PARA IO_MUX 
 /*los lugares que tienen cero corresponden a pines que no cuentan con resistencias para 
 *  pull up o pull down */
