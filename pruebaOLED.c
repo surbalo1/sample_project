@@ -30,4 +30,8 @@ void app_main() {
     ssd1306_set_screen(&screen);
     ssd1306_clear_screen(&screen, false);
     ssd1306_refresh(&screen, true);
+
+    // Agregar el mensaje de bienvenida en la pantalla OLED
+    ssd1306_write_string(&screen, 1, 1, "Hola, mundo!");
+    ssd1306_refresh(&screen, true);
 }
